@@ -16,8 +16,8 @@ export default function Home() {
         border-[1px] rounded-xl"> contact us </Link>
         <Link href="/support" className="shadow-xl p-2 text-4 border-amber-100
         border-[1px] rounded-xl">  support </Link>
-        <Link href="/career" className="shadow-xl p-2 text-4 border-amber-100
-        border-[1px] rounded-xl">  career </Link>
+        <Link href="/to_do_2" className="shadow-xl p-2 text-4 border-amber-100
+        border-[1px] rounded-xl">to_do_2</Link>
         <Link href="/to_do" className="shadow-xl p-2 text-4 border-amber-100
         border-[1px] rounded-xl">  todo </Link>
       </div>
