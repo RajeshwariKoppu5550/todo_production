@@ -11,7 +11,7 @@ export default function Home() {
       <h1>Iam home page</h1>
       <div className="flex gap-4 m-6">
          <Link href="/" className={`shadow-xl p-2 text-4 border-amber-100
-        border-[1px] rounded-xl ${pathname===`/` ? 'bg-amber-500 text-white' : ''}`}>  Home </Link>
+        border-[1px] rounded-xl ${pathname===`/` ? 'bg-blue-500 text-white' : ''}`}>  Home </Link>
         <Link href="/contact_us" className="shadow-xl p-2 text-4 border-amber-100
         border-[1px] rounded-xl"> contact us </Link>
         <Link href="/support" className="shadow-xl p-2 text-4 border-amber-100
