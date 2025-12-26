@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export default function ToDo2() {
     const [inputValue, setInputValue] = useState("");
     const [items, setItems] = useState<string[]>([]);
+    const [completedItems,setCompletedItems]=useState<string[]>([]);
     useEffect(() => {
         console.log(items);
     }, [])
@@ -10,6 +11,12 @@ export default function ToDo2() {
     //     const newItems=items.filter((_,i)=>i!==index);
     //     setItems(newItems);
     //    }
+    function deleteItem(item:string,index:number){
+         setCompletedItems([...completedItems,item]);
+         setItems(()=>items.filter((_,i)=>{
+            return index!==i;
+         }))
+    }
     function handledAdd() {
         if (inputValue.trim() === "") {
             return
@@ -31,22 +38,40 @@ export default function ToDo2() {
             {
                 items.map((item,index)=>{
                     return (
-                        <div>
-                            <div className="flex justify-between border-2 w-1/4">
-                                <div className=""> {index+1}. {item} 
+                        <div className="flex gap-3">
+                            <div className="flex justify-between border-2 w-1/2 my-2 px-5">
+                                <div className=" py-3"> {index+1}. {item} 
                                  </div>
+                                 
                                 <div className="text-2xl cursor-pointer" onClick={()=>{setItems(()=>items.filter((_,i)=>{
                                 return index!=i
                              }))}}> ×</div>
 
                             </div>
-                           
+                           <button onClick={()=>{
+                                    deleteItem(item,index);
+                                 }}
+                                 className="p-2 m-2 rounded-xl bg-amber-400"> Done</button>
                              
                         </div>
                     )
                 })
             }
-          {/*chhdhc */}
+            <h1 className="font-bold text-5xl my-5">Completed tasks</h1>
+          {
+            completedItems.map((item)=>{
+                return (
+                    
+                    <div >
+                        <div className=" ">
+                            <div className="border-2 w-1/2 px-4 my-4 py-2 bg-green-700 ">
+                               {item} 
+                            </div>
+                        </div>
+                    </div>
+                )
+            })
+          }
         </div>
     );
 }
