@@ -63,10 +63,23 @@ export default function ToDo2() {
                 return (
                     
                     <div >
-                        <div className=" ">
-                            <div className="border-2 w-1/2 px-4 my-4 py-2 bg-green-700 ">
+                        <div className="flex gap-4 ">
+                            <div className="border-2 w-1/2 px-4 my-4 py-2 bg-green-700 flex justify-between">
                                {item} 
+                               <div className="hover:cursor-pointer text-2xl" onClick={()=>{
+                                setCompletedItems(completedItems.filter((_,i)=>{
+                                    return i!==completedItems.indexOf(item);
+                                }));
+                               }}> ×</div>
                             </div>
+                            <button onClick={()=>{
+                                setItems([...items,item]);
+                                setCompletedItems(completedItems.filter((_,i)=>{
+                                    return i!==completedItems.indexOf(item);
+                                }));
+                            }}
+                            
+                            className="bg-red-200 p-2 m-2 rounded-xl"> Undo</button>
                         </div>
                     </div>
                 )

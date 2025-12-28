@@ -20,6 +20,7 @@ export default function Home() {
         border-[1px] rounded-xl">to_do_2</Link>
         <Link href="/to_do" className="shadow-xl p-2 text-4 border-amber-100
         border-[1px] rounded-xl">  todo </Link>
+        <Link href="/practice/fetch" className="text-4 p-2 shadow-2xl border border-amber-100 rounded-xl"> fetch</Link>
       </div>
     </div>
   );
