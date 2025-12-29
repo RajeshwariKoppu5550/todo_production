@@ -1,4 +1,5 @@
 "use client"
+// import { console } from "node:inspector";
 // import { console } from "inspector";
 // import { console } from "inspector";
 import {useState} from "react";
@@ -12,7 +13,7 @@ export default function FetchPage(props:any){
     //         return items.author===Item
     //     });
     // };
-    console.log(newsData);
+    console.log(props.first);
     return(
         <div>
           <div>
@@ -27,12 +28,14 @@ export default function FetchPage(props:any){
             <div className="flex ">
                   <input onChange={(e)=>{
                     setItem(e.target.value);
-                    
+                    console.log(Item); 
                   }}
                   value={Item}
-                   type="text" placeholder="Enter author name" className="border-2 w-1/4 h-10 p-6 pl-4 m-4  "></input>
+                   type="text" placeholder="Enter author name" className="border-2 w-1/4 h-10 p-6 pl-4 m-4">
+                   </input>
                   <button onClick={()=>{
                      setnewsData(props.data.filter((items:any)=>{
+                        // console.log(items.author==Item.trim());
                         return items.author==Item;
                     }))
                   }}

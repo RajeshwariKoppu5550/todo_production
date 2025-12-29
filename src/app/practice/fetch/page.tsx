@@ -10,7 +10,7 @@ export default async function FetchData() {
     return (
         <div>
             <h1>Fetch Page</h1>
-            <FetchPage data={data.articles} />
+            <FetchPage data={data.articles} first="raji" />
         </div>
     )
 }
