@@ -3,7 +3,6 @@
 import { connectDB } from "@/lib/mongodb";
 import Todo from "@/models/Todo";
 import { NextResponse } from "next/server";
-import { json } from "stream/consumers";
 
 
 export async function GET() {
